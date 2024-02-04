@@ -1,0 +1,40 @@
+bst binary search tree
+
+
+class Node:
+    def __init__(self,x):
+        self.data=x
+        self.left=None
+        self.right=None
+    def insert(self,x):
+        if self.data>x:
+            if self.left is None:
+                self.left=Node(x)
+            else:
+                self.left.insert(x)
+        else:
+            if self.right is None:
+                self.right=Node(x)
+            else:
+                self.right.insert(x)
+    def show(self):
+        if self.left:
+            self.left.show()
+        print(self.data,end=" ")
+        if self.right:
+            self.right.show()
+x=int(input())
+if x!=-1:
+    s=Node(x)
+else:
+    print('tree is empty')
+    
+while True:
+    x=int(input())    
+    if x==-1:
+        break
+    s.insert(x)
+s.show()
+        
+        
+                
